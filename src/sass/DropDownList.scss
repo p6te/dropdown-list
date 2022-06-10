@@ -17,5 +17,11 @@
         height: 16px;
       }
     }
+    .list-item {
+      &:hover {
+        background-color: rgb(102, 102, 102);
+        cursor: pointer;
+      }
+    }
   }
 }

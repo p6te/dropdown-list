@@ -19,6 +19,7 @@
       background-color: grey;
       padding: 0 8px;
       border-radius: 16px;
+      margin: 4px 0;
       margin-left: 8px;
       line-height: 32px;
       font-size: 18px;
@@ -37,11 +38,17 @@
         margin-left: 6px;
         background-color: rgb(236, 236, 236);
         color: grey;
+        transition: 0.3s;
+        &:hover {
+          transform: scale(1.2) rotate(90deg);
+          cursor: pointer;
+        }
       }
     }
   }
 
   input {
+
     text-decoration: none;
     background-color: transparent;
 
@@ -50,6 +57,7 @@
     line-height: 32px;
     font-size: 18px;
     padding: 0 10px;
+    // width: 200px;
     min-width: 200px;
     border: none;
 
