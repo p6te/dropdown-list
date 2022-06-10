@@ -1,10 +1,11 @@
-import "./App.css";
+import "./sass/App.scss";
 import React, { useEffect, useState } from "react";
+import InputSearcher from "./components/InputSearcher";
+import DropDown from "./components/DropDownList";
 
 function App() {
   const [data, setData] = useState([]);
-  const [tags, setTags] = useState([])
-  
+  const [tags, setTags] = useState([]);
 
   const fetchData = async () => {
     const response = await fetch(
@@ -26,11 +27,10 @@ function App() {
       });
   }, []);
 
-
-
   return (
     <div className="App">
-      
+      <InputSearcher data={data} tags={tags} setTags={setTags} />
+      <DropDown />
     </div>
   );
 }
