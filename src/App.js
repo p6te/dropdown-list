@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { useEffect, useState } from "react";
 
 function App() {
+  const [data, setData] = useState([]);
+  const [tags, setTags] = useState([])
+  
+
+  const fetchData = async () => {
+    const response = await fetch(
+      "https://62a0ea03a9866630f81aed05.mockapi.io/cars"
+    );
+    if (!response.ok) {
+      throw new Error("Data coud not be fetched.");
+    } else {
+      return response.json();
+    }
+  };
+  useEffect(() => {
+    fetchData()
+      .then((res) => {
+        setData(res);
+      })
+      .catch((e) => {
+        console.log(e.message);
+      });
+  }, []);
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
