@@ -5,7 +5,8 @@ import DropDownList from "./components/DropDownList";
 
 function App() {
   const [data, setData] = useState([]);
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(["xcvb", "car", "asd"]);
+  const [openList, setOpenList] = useState(false);
 
   const fetchData = async () => {
     const response = await fetch(
@@ -29,8 +30,13 @@ function App() {
 
   return (
     <div className="App">
-      <InputSearcher data={data} tags={tags} setTags={setTags} />
-      <DropDownList />
+      <InputSearcher
+        data={data}
+        tags={tags}
+        setTags={setTags}
+        setOpenList={setOpenList}
+      />
+      {openList ? <DropDownList /> : null}
     </div>
   );
 }
