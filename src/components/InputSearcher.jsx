@@ -22,7 +22,7 @@ function InputSearcher({ data, tags, setTags }) {
       </ul>
       <input
         type="text"
-        placeholder="Search by tags"
+        placeholder="Search by tags..."
         onKeyUp={(e) => (e.key === "Enter" ? addtags(e) : null)}
       />
     </div>

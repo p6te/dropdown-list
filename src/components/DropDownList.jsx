@@ -1,9 +1,21 @@
-import React , {useState} from 'react'
+import React, { useState } from "react";
+import "../sass/DropDownList.scss";
 
-function DropDown() {
-    return (
-<div></div>   
-    )
+function DropDownList() {
+  return (
+    <div className="dropdown-list">
+      <ul>
+        <li>car</li>
+        <li>car</li>
+        <li>car</li>
+        <li>car</li>
+        <li>car</li>
+        <li>car</li>
+        <li>car</li>
+        <li></li>
+      </ul>
+    </div>
+  );
 }
 
-export default DropDown
+export default DropDownList;

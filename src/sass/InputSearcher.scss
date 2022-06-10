@@ -3,10 +3,8 @@
   align-items: center;
   flex-wrap: wrap;
   min-height: 48px;
-
   padding: 0 8px;
-  border: 1px solid blue;
-  border-radius: 6px;
+
   &:focus-within {
     border: 1px solid tomato;
   }
@@ -22,35 +20,43 @@
       color: white;
       background-color: grey;
       padding: 0 8px;
-      border-radius: 6px;
+      border-radius: 16px;
       margin-left: 8px;
       line-height: 32px;
       font-size: 18px;
       width: auto;
       text-align: center;
       height: 32px;
+      border: 1px solid white;
       span {
         position: relative;
       }
       .colse-tag {
-          border-radius: 50%;
-          padding: 1px;
-          margin-left: 6px;
-          background-color: rgb(236, 236, 236);
-          color: grey;
+        border-radius: 50%;
+        padding: 1px;
+        margin-left: 6px;
+        background-color: rgb(236, 236, 236);
+        color: grey;
       }
     }
   }
-  input{
-      text-decoration: none;
-      min-height: 48px;
-      line-height: 32px;
-      font-size: 18px;
-      padding: 6px;
-      min-width: 200px;
-      border: none;
-      &:focus {
-        outline: none;
-      }
-}
+  input {
+    text-decoration: none;
+    background-color: transparent;
+
+    color: white;
+    min-height: 48px;
+    line-height: 32px;
+    font-size: 18px;
+    padding: 0 10px;
+    min-width: 200px;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: rgb(190, 190, 190);
+    }
+  }
 }

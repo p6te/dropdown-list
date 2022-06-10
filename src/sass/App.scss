@@ -9,9 +9,23 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+ 
   
 }
 .App {
     margin: 50px;
+    background-color: gray;
+    border-radius: 16px;
+    // padding: 10px;
 
+}
+.red{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+.t{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
 }
