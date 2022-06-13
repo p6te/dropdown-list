@@ -35,8 +35,11 @@ function InputSearcher({
 
   const deleteTag = (index) => {
     const deleteTag = tags.filter((i) => tags.indexOf(i) !== index);
+    console.log(deleteTag);
     setTags(deleteTag);
   };
+
+ // tag component
 
   const RenderTags = () => {
     if (tags.length > 0) {
