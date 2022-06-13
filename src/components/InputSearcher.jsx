@@ -9,6 +9,8 @@ function InputSearcher({
   setMatchingWords,
   setInputValue,
   inputValue,
+  selectedIndex,
+  setSelectedIndex,
 }) {
   //handle input
 

@@ -6,4 +6,6 @@
 
 <h3>- You can also add tags even when they are not on the list.</h3>
 
+<h3>- You can't add two the same tags</h3>
+
 <h2><a href="https://p6te.github.io/dropdown-list/">Check here how it works! </a></h2>

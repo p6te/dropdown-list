@@ -8,6 +8,7 @@ function App() {
   const [tags, setTags] = useState([]);
   const [matchingWords, setMatchingWords] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [selectedIndex, setSelectedIndex] = useState(-1);
 
   // fetch data from mock api
 
@@ -40,6 +41,8 @@ function App() {
         setMatchingWords={setMatchingWords}
         inputValue={inputValue}
         setInputValue={setInputValue}
+        selectedIndex={selectedIndex}
+        setSelectedIndex={setSelectedIndex}
       />
       <DropDownList
         tags={tags}
@@ -47,6 +50,8 @@ function App() {
         matchingWords={matchingWords}
         setMatchingWords={setMatchingWords}
         setInputValue={setInputValue}
+        selectedIndex={selectedIndex}
+        setSelectedIndex={setSelectedIndex}
       />
     </div>
   );

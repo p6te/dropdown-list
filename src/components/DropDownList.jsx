@@ -8,6 +8,8 @@ function DropDownList({
   setTags,
   setMatchingWords,
   setInputValue,
+  selectedIndex,
+  setSelectedIndex,
 }) {
   //add matching word from the list to the tags
 
@@ -26,6 +28,7 @@ function DropDownList({
   // arrows navigation
 
   const initialState = { selectedIndex: -1 };
+  // const initialState = selectedIndex;
 
   function reducer(state, action) {
     switch (action.type) {
@@ -68,7 +71,7 @@ function DropDownList({
 
   useEffect(() => {
     const handleEnter = (e) => {
-      if (e.key === "Enter" && matchingWords.length > 0) {
+      if (e.key === "Enter" && matchingWords.length > 0 && state.selectedIndex !== -1) {
         addItem(list[state.selectedIndex]);
         state.selectedIndex = -1;
       }
