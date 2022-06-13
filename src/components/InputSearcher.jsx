@@ -10,7 +10,6 @@ function InputSearcher({
   setInputValue,
   inputValue,
 }) {
-  
   //handle input
 
   const handleInput = (e) => {
@@ -21,11 +20,17 @@ function InputSearcher({
   //handling tags
 
   const addTag = (e) => {
-    if (e.target.value !== "") {
+    let counter = tags.filter((tag) => tag === e.target.value);
+    if (counter.length > 0) {
+      console.log(counter);
+      return;
+    } else if (e.target.value !== "" && e.target.value !== undefined) {
       setTags([...tags, e.target.value]);
       e.target.value = "";
       setInputValue("");
+      setMatchingWords([]);
     }
+    counter = [];
   };
 
   const deleteTag = (index) => {

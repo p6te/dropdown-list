@@ -48,7 +48,7 @@
   }
 
   input {
-
+    flex-grow: 1;
     text-decoration: none;
     background-color: transparent;
 
@@ -57,8 +57,9 @@
     line-height: 32px;
     font-size: 18px;
     padding: 0 10px;
-    // width: 200px;
-    min-width: 200px;
+
+    right: 20;
+    
     border: none;
 
     &:focus {

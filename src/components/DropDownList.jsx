@@ -70,7 +70,7 @@ function DropDownList({
     const handleEnter = (e) => {
       if (e.key === "Enter" && matchingWords.length > 0) {
         addItem(list[state.selectedIndex]);
-        state.selectedIndex = 0;
+        state.selectedIndex = -1;
       }
     };
 
