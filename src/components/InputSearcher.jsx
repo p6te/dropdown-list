@@ -1,19 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MdClose } from "react-icons/md";
 import "../sass/InputSearcher.scss";
 
-function InputSearcher({ data, tags, setTags, setOpenList, setMatchingWords }) {
-  const [inputValue, setInputValue] = useState("");
+function InputSearcher({
+  data,
+  tags,
+  setTags,
+  setMatchingWords,
+  setInputValue,
+  inputValue,
+}) {
+  
+  //handle input
 
   const handleInput = (e) => {
     setInputValue(e.target.value);
     matchingWords(e);
   };
 
-  const handleBlur = (e) => {
-    setOpenList(false);
-    // setMatchingWords([])
-  };
+  //handling tags
 
   const addTag = (e) => {
     if (e.target.value !== "") {
@@ -33,7 +38,7 @@ function InputSearcher({ data, tags, setTags, setOpenList, setMatchingWords }) {
       return tags.map((tag, index) => {
         return (
           <li key={index} index={index}>
-            <span>{tag}</span>
+            <span tabIndex={0}>{tag}</span>
             <MdClose className="colse-tag" onClick={() => deleteTag(index)} />
           </li>
         );
@@ -41,9 +46,15 @@ function InputSearcher({ data, tags, setTags, setOpenList, setMatchingWords }) {
     }
   };
 
-  const matchingWords = (e) => {
+  //matchnig words for input value
 
+  const matchingWords = (e) => {
     const input = e.target.value;
+
+    if (input === "") {
+      setMatchingWords([]);
+      return;
+    }
 
     const countries = data.map((item) => {
       if (item.country.toLowerCase().includes(input.toLowerCase()))
@@ -76,7 +87,13 @@ function InputSearcher({ data, tags, setTags, setOpenList, setMatchingWords }) {
       ...matchedModels,
     ];
 
-    setMatchingWords(matchedwords);
+    // deleting matchnig words which are already in tags
+
+    const matchedWordsWithoutTags = matchedwords.filter(
+      (item) => !tags.includes(item)
+    );
+
+    setMatchingWords(matchedWordsWithoutTags);
   };
 
   return (
@@ -88,9 +105,9 @@ function InputSearcher({ data, tags, setTags, setOpenList, setMatchingWords }) {
         type="text"
         placeholder="Search by tags..."
         onKeyUp={(e) => (e.key === "Enter" ? addTag(e) : null)}
-        onBlur={(e) => handleBlur(e)}
         onChange={(e) => handleInput(e)}
         value={inputValue}
+        tabIndex={0}
       />
     </div>
   );

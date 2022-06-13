@@ -6,8 +6,10 @@ import DropDownList from "./components/DropDownList";
 function App() {
   const [data, setData] = useState([]);
   const [tags, setTags] = useState([]);
-  const [openList, setOpenList] = useState(false);
   const [matchingWords, setMatchingWords] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  // fetch data from mock api
 
   const fetchData = async () => {
     const response = await fetch(
@@ -30,29 +32,21 @@ function App() {
   }, []);
 
   return (
-    <div className="App" >
+    <div className="App">
       <InputSearcher
         data={data}
         tags={tags}
         setTags={setTags}
-        setOpenList={setOpenList}
         setMatchingWords={setMatchingWords}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
       />
-      {/* {openList ? (
-        <DropDownList
-          data={data}
-          tags={tags}
-          setTags={setTags}
-          matchingWords={matchingWords}
-          setMatchingWords={setMatchingWords}
-        />
-      ) : null} */}
       <DropDownList
-        data={data}
         tags={tags}
         setTags={setTags}
         matchingWords={matchingWords}
         setMatchingWords={setMatchingWords}
+        setInputValue={setInputValue}
       />
     </div>
   );
