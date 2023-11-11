@@ -1,4 +1,4 @@
-<h1>This is drop-down searcher witg tags </h1>
+<h1>This is drop-down searcher with tags </h1>
 
 <h3>- The project use mock api created specially for that app which generate 100 random obejcts with few categories.</h3>
 
